@@ -42,6 +42,9 @@ if argc > 1 and (argvs[1] == "-b" or argvs[1] == "-a"):
         print ("Input coin:")
         coin_type = str(input())
         print(zaif_pub.last_price(coin_type+'_jpy'))
+    else:
+        coin_type = str(argvs[2])
+        print(zaif_pub.last_price(coin_type+'_jpy'))
     if argc < 4:
         print ("Input price:")
         coin_price = float(input())
