@@ -42,19 +42,19 @@ if argc > 1 and argvs[1] == "-t":
         print ("Input coin:")
         coin_type = str(input())
         print(zaif_pub.last_price(coin_type+'_jpy'))
-    if argc < 3:
+    if argc < 4:
         print ("Input price:")
         coin_price = float(input())
     else:
-        coin_price = float(argvs[2])
-    if argc < 4:
+        coin_price = float(argvs[3])
+    if argc < 5:
         print ("Input amount:")
         coin_amount = int(input())
     else:
-        coin_amount = int(argvs[3])
-    if argc > 4 and argvs[4] == "F":
+        coin_amount = int(argvs[4])
+    if argc > 5 and argvs[5] == "F":
         confirm = "Y"
-    elif argc > 4 and argvs[4] == "FF":
+    elif argc > 5 and argvs[5] == "FF":
         confirm = "FF"
     else:
     	confirm = ""
@@ -64,7 +64,6 @@ if argc > 1 and argvs[1] == "-t":
         print("Are you sure? [YnFF]")
         confirm = input()
     trader = Trader()
-
     try_num = 1
     if confirm == "FF":
         try_num = 10
