@@ -46,15 +46,15 @@ if argc > 1 and argvs[1] == "-t":
         print ("Input price:")
         coin_price = float(input())
     else:
-        coin_price = float(argvs[3])
+        coin_price = float(argvs[2])
     if argc < 4:
         print ("Input amount:")
         coin_amount = int(input())
     else:
-        coin_amount = int(argvs[4])
-    if argc > 5 and argvs[5] == "F":
+        coin_amount = int(argvs[3])
+    if argc > 4 and argvs[4] == "F":
         confirm = "Y"
-    elif argc > 5 and argvs[5] == "FF":
+    elif argc > 4 and argvs[4] == "FF":
         confirm = "FF"
     else:
     	confirm = ""
