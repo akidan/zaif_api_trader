@@ -63,12 +63,13 @@ if argc > 1 and argvs[1] == "-t":
         print("Are you sure? [YnFF]")
         confirm = input()
     trader = Trader()
-    if confirm == "Y":
+
+    try_num = 1
+    if confirm == "FF":
+        try_num = 10
+    while (try_num > 0 and confirm == "Y" or confirm == "FF"):
         trader.trade(coin_type, coin_amount, coin_price)
-    elif confirm == "FF":
-        fail = True
-        while (fail):
-            fail =  trader.trade(coin_type, coin_amount, coin_price)
+        try_num = try_num - 1
 
 elif argc > 1 and argvs[1]=="-c" and argc==3:
     coin_leverage_id = int(argvs[2])
