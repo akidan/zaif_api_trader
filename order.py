@@ -1,6 +1,7 @@
 import sys, os
 import json
 from zaifapi import *
+from time import sleep
 
 argvs = sys.argv
 argc = len(argvs)
@@ -67,9 +68,11 @@ if argc > 1 and argvs[1] == "-t":
     try_num = 1
     if confirm == "FF":
         try_num = 10
-    while (try_num > 0 and confirm == "Y" or confirm == "FF"):
-        trader.trade(coin_type, coin_amount, coin_price)
+    fail = True
+    while (fail and try_num > 0 and confirm == "Y" or confirm == "FF"):
+        fail = trader.trade(coin_type, coin_amount, coin_price)
         try_num = try_num - 1
+        sleep(1)
 
 elif argc > 1 and argvs[1]=="-c" and argc==3:
     coin_leverage_id = int(argvs[2])
