@@ -81,7 +81,7 @@ elif argc > 1 and argvs[1]=="-c" and argc==3:
     print(zaif.cancel_order(order_id=coin_order_id))
 elif argc > 1 and argvs[1]=="-l":
     print(zaif.active_orders())
-elif argc > 1 and argvs[1] in ["btc", "eth", "xem", "mona", "zaif"]:
+elif argc > 1 and argvs[1] in ["btc", "eth", "xem", "mona", "zaif", "mosaic.cms"]:
     coin_type = str(argvs[1])
     print(coin_type+" "+str(zaif_pub.last_price(coin_type+'_jpy')))
 else:
